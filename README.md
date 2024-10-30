@@ -123,42 +123,4 @@ AND status = 'ACTIVE'
 
 ## 5. Модель данных
 
-```
-erDiagram
-    FLIGHTS {
-        uuid id PK
-        string departure_city_id FK
-        string arrival_city_id FK
-        timestamp departure_date
-        timestamp arrival_date
-        decimal base_price
-        string status
-    }
-    
-    CITIES {
-        uuid id PK
-        string name
-        string code
-    }
-    
-    BOOKINGS {
-        uuid id PK
-        uuid flight_id FK
-        json passenger_data
-        json contact_info
-        json luggage_info
-        string status
-        timestamp created_at
-    }
-    
-    PAYMENTS {
-        uuid id PK
-        uuid booking_id FK
-        string payment_method
-        number amount
-        string status
-        timestamp created_at
-    }
-```
-
 ![Изображение ER диграммы](./Снимок%20экрана%202024-10-29%20144109.png)
