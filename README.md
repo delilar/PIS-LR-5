@@ -5,9 +5,9 @@
 | Параметр | Тип параметра | Обязательность | Описание |
 |----------|---------------|----------------|-----------|
 | flightId | uuid | + | Идентификатор рейса |
-| passengerData | object | + | Данные о пассажире |
-| contactInfo | object | + | Контактная информация |
-| luggageInfo | object | + | Информация о багаже |
+| passengerData | string | + | Данные о пассажире |
+| contactInfo | string | + | Контактная информация |
+| luggageInfo | string | + | Информация о багаже |
 
 ## 2. Авторизация
 
@@ -34,24 +34,24 @@ AND status = 'ACTIVE'
 ```json
 {
   "flightInfo": {
-    "departureCity": "Москва",
-    "arrivalCity": "Астрахань",
+    "departureCity": "",
+    "arrivalCity": "",
     "departureDate": "18.10.2024",
     "arrivalDate": "21.11.2024",
     "flightNumbers": ["16:30 SVO", "22:05 ASF"]
   },
   "price": 13272,
   "passengerInfo": {
-    "firstName": "Леонид",
-    "lastName": "Хахалев",
-    "middleName": "Сергеевич",
+    "firstName": "",
+    "lastName": "",
+    "middleName": "",
     "documentType": "Российский паспорт",
-    "documentNumber": "1234567890",
-    "birthDate": "30.10.2004"
+    "documentNumber": "",
+    "birthDate": ""
   },
   "contactInfo": {
-    "email": "delilar45@gmail.com",
-    "phone": "+79896825228"
+    "email": "",
+    "phone": ""
   },
   "luggage": {
     "handLuggage": {
