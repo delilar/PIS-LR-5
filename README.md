@@ -20,7 +20,7 @@
 ```sql
 -- Проверка прав доступа к бронированию
 SELECT id FROM tbl_bookings 
-WHERE user_id = {current_user} 
+WHERE user_id = {userId} 
 AND id = {bookingId}
 
 -- Проверка статуса рейса
