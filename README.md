@@ -5,9 +5,9 @@
 | Параметр | Тип параметра | Обязательность | Описание |
 |----------|---------------|----------------|-----------|
 | flightId | uuid | + | Идентификатор рейса |
-| passengerData | string | + | Данные о пассажире |
-| contactInfo | string | + | Контактная информация |
-| luggageInfo | string | + | Информация о багаже |
+| userId | uuid | + | Индентификатор пользователя |
+| bookingId | uuid | + | Индентификатор багажа |
+| luggageInfo | string | - | Информация о багаже |
 
 ## 2. Авторизация
 
@@ -20,7 +20,7 @@
 ```sql
 -- Проверка прав доступа к бронированию
 SELECT id FROM tbl_bookings 
-WHERE booking_user_id = {current_user} 
+WHERE user_id = {current_user} 
 AND id = {bookingId}
 
 -- Проверка статуса рейса
