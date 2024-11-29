@@ -105,7 +105,7 @@ AND status = 'ACTIVE'
 
 | Название | Создание бронирования билета |
 |----------|----------------------------|
-| URL | /api/validate-booking |
+| URL | /api/bookings |
 | Тип метода | POST |
 | Проверка авторизации | Базовая авторизация |
 | Действия на бэкенде | INSERT INTO tbl_bookings (flight_id, passenger_data, contact_info, luggage_info) VALUES (...) |
@@ -122,6 +122,17 @@ AND status = 'ACTIVE'
 | Действия на бэкенде | 1. Проверка статуса бронирования<br>2. Создание платежа<br>3. Обновление статуса бронирования |
 | Body | {<br>"paymentMethod": "CARD"/"SBP",<br>"paymentDetails": {...}<br>} |
 | Responses | 200 OK: {"message": "Оплата прошла успешно"}<br>400 Bad Request: {"message": "Ошибка оплаты"}<br>404 Not Found: {"message": "Бронирование не найдено"} |
+
+### 4.4 Добавление багажа
+
+| Название | Добавление багажа к бронированию |
+|----------|------------------------------|
+| URL | /api/bookings/{bookingId}/baggage |
+| Тип метода | POST |
+| Проверка авторизации | Базовая авторизация |
+| Действия на бэкенде | 1. Проверка статуса бронирования<br>2. Обновление информации о багаже в бронировании |
+| Body | {<br>"handLuggage": {...},<br>"checkedBaggage": {...}<br>} |
+| Responses | 200 OK: {"message": "Багаж добавлен"}<br>400 Bad Request: {"message": "Ошибка добавления багажа"}<br>404 Not Found: {"message": "Бронирование не найдено"} |
 
 ## 5. Модель данных
 
