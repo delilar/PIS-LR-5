@@ -34,10 +34,10 @@ AND status = 'ACTIVE'
 ```json
 {
   "flightInfo": {
-    "departureCity": "",
-    "arrivalCity": "",
-    "departureDate": "18.10.2024",
-    "arrivalDate": "21.11.2024",
+    "departureCity": "Москва",
+    "arrivalCity": "Астрахань",
+    "departureDate": "18 окт",
+    "arrivalDate": "21 нояб",
     "flightNumbers": ["16:30 SVO", "22:05 ASF"]
   },
   "price": 13272,
@@ -47,7 +47,8 @@ AND status = 'ACTIVE'
     "middleName": "",
     "documentType": "Российский паспорт",
     "documentNumber": "",
-    "birthDate": ""
+    "birthDate": "",
+    "gender": ""
   },
   "contactInfo": {
     "email": "",
@@ -62,10 +63,11 @@ AND status = 'ACTIVE'
     "checkedBaggage": {
       "included": false,
       "quantity": 1,
-      "weight": 20,
+      "weight": 23,
       "price": 6750
     }
   }
+}
 }
 ```
 
@@ -103,7 +105,7 @@ AND status = 'ACTIVE'
 
 | Название | Создание бронирования билета |
 |----------|----------------------------|
-| URL | /api/bookings |
+| URL | /api/validate-booking |
 | Тип метода | POST |
 | Проверка авторизации | Базовая авторизация |
 | Действия на бэкенде | INSERT INTO tbl_bookings (flight_id, passenger_data, contact_info, luggage_info) VALUES (...) |
